@@ -1,9 +1,10 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export async function generateKeyboardLandscape(prompt: string) {
+  // Initialize inside the call to ensure process.env.API_KEY is latest
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  
   const response = await ai.models.generateContent({
     model: 'gemini-3-flash-preview',
     contents: `Translate the user request "${prompt}" into synth parameters. 
@@ -30,9 +31,11 @@ export async function generateKeyboardLandscape(prompt: string) {
     }
   });
 
+  const data = JSON.parse(response.text || '{}');
+
   return { 
     id: Math.random().toString(36).substr(2, 9),
     author: 'AI Architect',
-    ...JSON.parse(response.text)
+    ...data
   };
 }
