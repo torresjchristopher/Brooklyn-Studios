@@ -2,8 +2,8 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
 export async function generateKeyboardLandscape(prompt: string) {
-  // Always use process.env.API_KEY directly as required
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // Use Vite's environment variable format
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   
   try {
     const response = await ai.models.generateContent({
