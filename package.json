@@ -1,23 +1,17 @@
+
 {
   "name": "keysynth-studio-pro",
+  "version": "2.5.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react-dom": "^19.2.3",
-    "lucide-react": "^0.562.0",
-    "react": "^19.2.3",
-    "@google/genai": "^1.34.0"
-  },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
-  }
+  "description": "Professional AI-Powered MIDI Keyboard and Recording Studio",
+  "keywords": [
+    "midi",
+    "synthesizer",
+    "ai",
+    "gemini",
+    "recording",
+    "studio"
+  ],
+  "author": "KeySynth Team",
+  "license": "MIT"
 }
